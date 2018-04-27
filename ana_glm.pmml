@@ -1,0 +1,53 @@
+<PMML version="4.3" xmlns="http://www.dmg.org/PMML-4_3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.dmg.org/PMML-4_3 http://www.dmg.org/pmml/v4-3/pmml-4-3.xsd">
+ <Header copyright="Copyright (c) 2018 hadachi" description="Generalized Linear Regression Model">
+  <Extension name="user" value="hadachi" extender="Rattle/PMML"/>
+  <Application name="Rattle/PMML" version="1.4"/>
+  <Timestamp>2018-04-26 04:43:46</Timestamp>
+ </Header>
+ <DataDictionary numberOfFields="5">
+  <DataField name="result" optype="continuous" dataType="double"/>
+  <DataField name="count_document" optype="continuous" dataType="double"/>
+  <DataField name="count_oc" optype="continuous" dataType="double"/>
+  <DataField name="count_briefing" optype="continuous" dataType="double"/>
+  <DataField name="count_consultation" optype="continuous" dataType="double"/>
+ </DataDictionary>
+ <GeneralRegressionModel modelName="General_Regression_Model" modelType="generalizedLinear" functionName="regression" algorithmName="glm" distribution="binomial" linkFunction="logit">
+  <MiningSchema>
+   <MiningField name="result" usageType="predicted"/>
+   <MiningField name="count_document" usageType="active"/>
+   <MiningField name="count_oc" usageType="active"/>
+   <MiningField name="count_briefing" usageType="active"/>
+   <MiningField name="count_consultation" usageType="active"/>
+  </MiningSchema>
+  <Output>
+   <OutputField name="Predicted_result" feature="predictedValue"/>
+  </Output>
+  <ParameterList>
+   <Parameter name="p0" label="(Intercept)"/>
+   <Parameter name="p1" label="count_document"/>
+   <Parameter name="p2" label="count_oc"/>
+   <Parameter name="p3" label="count_briefing"/>
+   <Parameter name="p4" label="count_consultation"/>
+  </ParameterList>
+  <FactorList/>
+  <CovariateList>
+   <Predictor name="count_document"/>
+   <Predictor name="count_oc"/>
+   <Predictor name="count_briefing"/>
+   <Predictor name="count_consultation"/>
+  </CovariateList>
+  <PPMatrix>
+   <PPCell value="1" predictorName="count_document" parameterName="p1"/>
+   <PPCell value="1" predictorName="count_oc" parameterName="p2"/>
+   <PPCell value="1" predictorName="count_briefing" parameterName="p3"/>
+   <PPCell value="1" predictorName="count_consultation" parameterName="p4"/>
+  </PPMatrix>
+  <ParamMatrix>
+   <PCell parameterName="p0" df="1" beta="-3.83738528698805"/>
+   <PCell parameterName="p1" df="1" beta="0.243700927640294"/>
+   <PCell parameterName="p2" df="1" beta="1.27707280618344"/>
+   <PCell parameterName="p3" df="1" beta="1.68024813591281"/>
+   <PCell parameterName="p4" df="1" beta="0.0999325172570161"/>
+  </ParamMatrix>
+ </GeneralRegressionModel>
+</PMML>
