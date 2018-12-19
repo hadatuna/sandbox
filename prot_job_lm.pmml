@@ -1,0 +1,56 @@
+<PMML version="4.3" xmlns="http://www.dmg.org/PMML-4_3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.dmg.org/PMML-4_3 http://www.dmg.org/pmml/v4-3/pmml-4-3.xsd">
+ <Header copyright="Copyright (c) 2018 hadachi" description="Linear Regression Model">
+  <Extension name="user" value="hadachi" extender="Rattle/PMML"/>
+  <Application name="Rattle/PMML" version="1.4"/>
+  <Timestamp>2018-12-19 05:54:36</Timestamp>
+ </Header>
+ <DataDictionary numberOfFields="13">
+  <DataField name="data$accident" optype="continuous" dataType="double"/>
+  <DataField name="data$juchu_system" optype="continuous" dataType="double"/>
+  <DataField name="data$anken_system" optype="continuous" dataType="double"/>
+  <DataField name="data$nouhin_system" optype="continuous" dataType="double"/>
+  <DataField name="data$okikae" optype="continuous" dataType="double"/>
+  <DataField name="data$tejunsho_rule" optype="continuous" dataType="double"/>
+  <DataField name="data$flow_chart" optype="continuous" dataType="double"/>
+  <DataField name="data$teishutsu" optype="continuous" dataType="double"/>
+  <DataField name="data$unyou_checksheet" optype="continuous" dataType="double"/>
+  <DataField name="data$kyouiku_houhou" optype="continuous" dataType="double"/>
+  <DataField name="data$hinshitsu_checksheet" optype="continuous" dataType="double"/>
+  <DataField name="data$w_check" optype="continuous" dataType="double"/>
+  <DataField name="data$tool_dounyu" optype="continuous" dataType="double"/>
+ </DataDictionary>
+ <RegressionModel modelName="Linear_Regression_Model" functionName="regression" algorithmName="least squares">
+  <MiningSchema>
+   <MiningField name="data$accident" usageType="predicted"/>
+   <MiningField name="data$juchu_system" usageType="active"/>
+   <MiningField name="data$anken_system" usageType="active"/>
+   <MiningField name="data$nouhin_system" usageType="active"/>
+   <MiningField name="data$okikae" usageType="active"/>
+   <MiningField name="data$tejunsho_rule" usageType="active"/>
+   <MiningField name="data$flow_chart" usageType="active"/>
+   <MiningField name="data$teishutsu" usageType="active"/>
+   <MiningField name="data$unyou_checksheet" usageType="active"/>
+   <MiningField name="data$kyouiku_houhou" usageType="active"/>
+   <MiningField name="data$hinshitsu_checksheet" usageType="active"/>
+   <MiningField name="data$w_check" usageType="active"/>
+   <MiningField name="data$tool_dounyu" usageType="active"/>
+  </MiningSchema>
+  <Output>
+   <OutputField name="Predicted_data$accident" feature="predictedValue"/>
+  </Output>
+  <RegressionTable intercept="0.110035358580116">
+   <NumericPredictor name="data$juchu_system" exponent="1" coefficient="-0.0947148620081557"/>
+   <NumericPredictor name="data$anken_system" exponent="1" coefficient="0.147791787914144"/>
+   <NumericPredictor name="data$nouhin_system" exponent="1" coefficient="0.00279037584384685"/>
+   <NumericPredictor name="data$okikae" exponent="1" coefficient="1.86205623494096"/>
+   <NumericPredictor name="data$tejunsho_rule" exponent="1" coefficient="-0.208657836342912"/>
+   <NumericPredictor name="data$flow_chart" exponent="1" coefficient="-0.277274761938248"/>
+   <NumericPredictor name="data$teishutsu" exponent="1" coefficient="1.08453426476391"/>
+   <NumericPredictor name="data$unyou_checksheet" exponent="1" coefficient="0.180040382079124"/>
+   <NumericPredictor name="data$kyouiku_houhou" exponent="1" coefficient="-0.144760067341114"/>
+   <NumericPredictor name="data$hinshitsu_checksheet" exponent="1" coefficient="1.2814897070218"/>
+   <NumericPredictor name="data$w_check" exponent="1" coefficient="0.102841096998954"/>
+   <NumericPredictor name="data$tool_dounyu" exponent="1" coefficient="0.02888753067527"/>
+  </RegressionTable>
+ </RegressionModel>
+</PMML>
