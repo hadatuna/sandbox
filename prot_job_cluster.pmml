@@ -2,10 +2,9 @@
  <Header copyright="Copyright (c) 2018 hadachi" description="KMeans cluster model">
   <Extension name="user" value="hadachi" extender="Rattle/PMML"/>
   <Application name="Rattle/PMML" version="1.4"/>
-  <Timestamp>2018-12-19 05:28:26</Timestamp>
+  <Timestamp>2018-12-19 05:36:04</Timestamp>
  </Header>
- <DataDictionary numberOfFields="13">
-  <DataField name="accident" optype="continuous" dataType="double"/>
+ <DataDictionary numberOfFields="12">
   <DataField name="juchu_system" optype="continuous" dataType="double"/>
   <DataField name="anken_system" optype="continuous" dataType="double"/>
   <DataField name="nouhin_system" optype="continuous" dataType="double"/>
@@ -19,9 +18,8 @@
   <DataField name="w_check" optype="continuous" dataType="double"/>
   <DataField name="tool_dounyu" optype="continuous" dataType="double"/>
  </DataDictionary>
- <ClusteringModel modelName="KMeans_Model" functionName="clustering" algorithmName="KMeans: Hartigan and Wong" modelClass="centerBased" numberOfClusters="4">
+ <ClusteringModel modelName="KMeans_Model" functionName="clustering" algorithmName="KMeans: Hartigan and Wong" modelClass="centerBased" numberOfClusters="2">
   <MiningSchema>
-   <MiningField name="accident"/>
    <MiningField name="juchu_system"/>
    <MiningField name="anken_system"/>
    <MiningField name="nouhin_system"/>
@@ -39,13 +37,10 @@
    <OutputField name="predictedValue" feature="predictedValue"/>
    <OutputField name="clusterAffinity_1" feature="clusterAffinity" value="1"/>
    <OutputField name="clusterAffinity_2" feature="clusterAffinity" value="2"/>
-   <OutputField name="clusterAffinity_3" feature="clusterAffinity" value="3"/>
-   <OutputField name="clusterAffinity_4" feature="clusterAffinity" value="4"/>
   </Output>
   <ComparisonMeasure kind="distance">
    <squaredEuclidean/>
   </ComparisonMeasure>
-  <ClusteringField field="accident" compareFunction="absDiff"/>
   <ClusteringField field="juchu_system" compareFunction="absDiff"/>
   <ClusteringField field="anken_system" compareFunction="absDiff"/>
   <ClusteringField field="nouhin_system" compareFunction="absDiff"/>
@@ -58,17 +53,11 @@
   <ClusteringField field="hinshitsu_checksheet" compareFunction="absDiff"/>
   <ClusteringField field="w_check" compareFunction="absDiff"/>
   <ClusteringField field="tool_dounyu" compareFunction="absDiff"/>
-  <Cluster name="1" size="140" id="1">
-   <Array n="13" type="real">1.93571428571429 3.97857142857143 6.70714285714286 5.12142857142857 0.114285714285714 0.785714285714286 0.742857142857143 0.242857142857143 0.55 0.285714285714286 0.6 0.757142857142857 0.364285714285714</Array>
+  <Cluster name="1" size="78" id="1">
+   <Array n="12" type="real">3.84615384615385 1.69230769230769 6.03846153846154 0.0128205128205128 0.717948717948718 0.564102564102564 0.141025641025641 0.615384615384615 0.166666666666667 0.641025641025641 0.602564102564103 0.192307692307692</Array>
   </Cluster>
-  <Cluster name="2" size="30" id="2">
-   <Array n="13" type="real">0.4 4.43333333333333 0.1 4.5 0.0333333333333333 0.766666666666667 0.533333333333333 0.133333333333333 0.566666666666667 0.2 0.6 0.4 0.0333333333333333</Array>
-  </Cluster>
-  <Cluster name="3" size="26" id="3">
-   <Array n="13" type="real">0.269230769230769 4.61538461538461 0.807692307692308 9.92307692307692 0 0.461538461538462 0.538461538461538 0.0384615384615385 0.576923076923077 0.115384615384615 0.576923076923077 0.576923076923077 0.0384615384615385</Array>
-  </Cluster>
-  <Cluster name="4" size="80" id="4">
-   <Array n="13" type="real">1.3 8.8125 8.025 7.9625 0.15 0.8625 0.6875 0.325 0.5 0.5625 0.5125 0.7375 0.275</Array>
+  <Cluster name="2" size="198" id="2">
+   <Array n="12" type="real">6.13636363636364 7.43939393939394 6.44444444444444 0.141414141414141 0.797979797979798 0.732323232323232 0.272727272727273 0.51010101010101 0.409090909090909 0.545454545454545 0.732323232323232 0.303030303030303</Array>
   </Cluster>
  </ClusteringModel>
 </PMML>
