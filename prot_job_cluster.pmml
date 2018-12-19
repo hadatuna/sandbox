@@ -2,9 +2,10 @@
  <Header copyright="Copyright (c) 2018 hadachi" description="KMeans cluster model">
   <Extension name="user" value="hadachi" extender="Rattle/PMML"/>
   <Application name="Rattle/PMML" version="1.4"/>
-  <Timestamp>2018-12-19 05:21:06</Timestamp>
+  <Timestamp>2018-12-19 05:28:26</Timestamp>
  </Header>
- <DataDictionary numberOfFields="12">
+ <DataDictionary numberOfFields="13">
+  <DataField name="accident" optype="continuous" dataType="double"/>
   <DataField name="juchu_system" optype="continuous" dataType="double"/>
   <DataField name="anken_system" optype="continuous" dataType="double"/>
   <DataField name="nouhin_system" optype="continuous" dataType="double"/>
@@ -20,6 +21,7 @@
  </DataDictionary>
  <ClusteringModel modelName="KMeans_Model" functionName="clustering" algorithmName="KMeans: Hartigan and Wong" modelClass="centerBased" numberOfClusters="4">
   <MiningSchema>
+   <MiningField name="accident"/>
    <MiningField name="juchu_system"/>
    <MiningField name="anken_system"/>
    <MiningField name="nouhin_system"/>
@@ -43,6 +45,7 @@
   <ComparisonMeasure kind="distance">
    <squaredEuclidean/>
   </ComparisonMeasure>
+  <ClusteringField field="accident" compareFunction="absDiff"/>
   <ClusteringField field="juchu_system" compareFunction="absDiff"/>
   <ClusteringField field="anken_system" compareFunction="absDiff"/>
   <ClusteringField field="nouhin_system" compareFunction="absDiff"/>
@@ -55,17 +58,17 @@
   <ClusteringField field="hinshitsu_checksheet" compareFunction="absDiff"/>
   <ClusteringField field="w_check" compareFunction="absDiff"/>
   <ClusteringField field="tool_dounyu" compareFunction="absDiff"/>
-  <Cluster name="1" size="82" id="1">
-   <Array n="12" type="real">6.36585365853659 4.89024390243902 4.81707317073171 0.0975609756097561 0.878048780487805 0.621951219512195 0.426829268292683 0.378048780487805 0.292682926829268 0.390243902439024 0.609756097560976 0.24390243902439</Array>
+  <Cluster name="1" size="140" id="1">
+   <Array n="13" type="real">1.93571428571429 3.97857142857143 6.70714285714286 5.12142857142857 0.114285714285714 0.785714285714286 0.742857142857143 0.242857142857143 0.55 0.285714285714286 0.6 0.757142857142857 0.364285714285714</Array>
   </Cluster>
-  <Cluster name="2" size="70" id="2">
-   <Array n="12" type="real">7.77142857142857 8.95714285714286 9.11428571428571 0.1 0.771428571428571 0.742857142857143 0.257142857142857 0.542857142857143 0.6 0.585714285714286 0.757142857142857 0.342857142857143</Array>
+  <Cluster name="2" size="30" id="2">
+   <Array n="13" type="real">0.4 4.43333333333333 0.1 4.5 0.0333333333333333 0.766666666666667 0.533333333333333 0.133333333333333 0.566666666666667 0.2 0.6 0.4 0.0333333333333333</Array>
   </Cluster>
-  <Cluster name="3" size="51" id="3">
-   <Array n="12" type="real">4.13725490196078 0.176470588235294 7.01960784313725 0.0196078431372549 0.627450980392157 0.549019607843137 0.0784313725490196 0.588235294117647 0.137254901960784 0.607843137254902 0.509803921568627 0.0196078431372549</Array>
+  <Cluster name="3" size="26" id="3">
+   <Array n="13" type="real">0.269230769230769 4.61538461538461 0.807692307692308 9.92307692307692 0 0.461538461538462 0.538461538461538 0.0384615384615385 0.576923076923077 0.115384615384615 0.576923076923077 0.576923076923077 0.0384615384615385</Array>
   </Cluster>
-  <Cluster name="4" size="73" id="4">
-   <Array n="12" type="real">3.26027397260274 7.78082191780822 4.87671232876712 0.178082191780822 0.767123287671233 0.794520547945205 0.10958904109589 0.684931506849315 0.287671232876712 0.73972602739726 0.863013698630137 0.410958904109589</Array>
+  <Cluster name="4" size="80" id="4">
+   <Array n="13" type="real">1.3 8.8125 8.025 7.9625 0.15 0.8625 0.6875 0.325 0.5 0.5625 0.5125 0.7375 0.275</Array>
   </Cluster>
  </ClusteringModel>
 </PMML>
