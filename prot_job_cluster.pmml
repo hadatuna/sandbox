@@ -1,0 +1,70 @@
+<PMML version="4.3" xmlns="http://www.dmg.org/PMML-4_3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.dmg.org/PMML-4_3 http://www.dmg.org/pmml/v4-3/pmml-4-3.xsd">
+ <Header copyright="Copyright (c) 2018 hadachi" description="KMeans cluster model">
+  <Extension name="user" value="hadachi" extender="Rattle/PMML"/>
+  <Application name="Rattle/PMML" version="1.4"/>
+  <Timestamp>2018-12-19 04:27:26</Timestamp>
+ </Header>
+ <DataDictionary numberOfFields="13">
+  <DataField name="juchu_system" optype="continuous" dataType="double"/>
+  <DataField name="anken_system" optype="continuous" dataType="double"/>
+  <DataField name="nouhin_system" optype="continuous" dataType="double"/>
+  <DataField name="sonota_system" optype="continuous" dataType="double"/>
+  <DataField name="okikae" optype="continuous" dataType="double"/>
+  <DataField name="tejunsho_rule" optype="continuous" dataType="double"/>
+  <DataField name="flow_chart" optype="continuous" dataType="double"/>
+  <DataField name="teishutsu" optype="continuous" dataType="double"/>
+  <DataField name="unyou_checksheet" optype="continuous" dataType="double"/>
+  <DataField name="kyouiku_houhou" optype="continuous" dataType="double"/>
+  <DataField name="hinshitsu_checksheet" optype="continuous" dataType="double"/>
+  <DataField name="w_check" optype="continuous" dataType="double"/>
+  <DataField name="tool_dounyu" optype="continuous" dataType="double"/>
+ </DataDictionary>
+ <ClusteringModel modelName="KMeans_Model" functionName="clustering" algorithmName="KMeans: Hartigan and Wong" modelClass="centerBased" numberOfClusters="3">
+  <MiningSchema>
+   <MiningField name="juchu_system"/>
+   <MiningField name="anken_system"/>
+   <MiningField name="nouhin_system"/>
+   <MiningField name="sonota_system"/>
+   <MiningField name="okikae"/>
+   <MiningField name="tejunsho_rule"/>
+   <MiningField name="flow_chart"/>
+   <MiningField name="teishutsu"/>
+   <MiningField name="unyou_checksheet"/>
+   <MiningField name="kyouiku_houhou"/>
+   <MiningField name="hinshitsu_checksheet"/>
+   <MiningField name="w_check"/>
+   <MiningField name="tool_dounyu"/>
+  </MiningSchema>
+  <Output>
+   <OutputField name="predictedValue" feature="predictedValue"/>
+   <OutputField name="clusterAffinity_1" feature="clusterAffinity" value="1"/>
+   <OutputField name="clusterAffinity_2" feature="clusterAffinity" value="2"/>
+   <OutputField name="clusterAffinity_3" feature="clusterAffinity" value="3"/>
+  </Output>
+  <ComparisonMeasure kind="distance">
+   <squaredEuclidean/>
+  </ComparisonMeasure>
+  <ClusteringField field="juchu_system" compareFunction="absDiff"/>
+  <ClusteringField field="anken_system" compareFunction="absDiff"/>
+  <ClusteringField field="nouhin_system" compareFunction="absDiff"/>
+  <ClusteringField field="sonota_system" compareFunction="absDiff"/>
+  <ClusteringField field="okikae" compareFunction="absDiff"/>
+  <ClusteringField field="tejunsho_rule" compareFunction="absDiff"/>
+  <ClusteringField field="flow_chart" compareFunction="absDiff"/>
+  <ClusteringField field="teishutsu" compareFunction="absDiff"/>
+  <ClusteringField field="unyou_checksheet" compareFunction="absDiff"/>
+  <ClusteringField field="kyouiku_houhou" compareFunction="absDiff"/>
+  <ClusteringField field="hinshitsu_checksheet" compareFunction="absDiff"/>
+  <ClusteringField field="w_check" compareFunction="absDiff"/>
+  <ClusteringField field="tool_dounyu" compareFunction="absDiff"/>
+  <Cluster name="1" size="83" id="1">
+   <Array n="13" type="real">6.66265060240964 9.65060240963855 7.87951807228916 9.49397590361446 0.0843373493975904 0.734939759036145 0.843373493975904 0.180722891566265 0.506024096385542 0.650602409638554 0.55421686746988 0.795180722891566 0.301204819277108</Array>
+  </Cluster>
+  <Cluster name="2" size="94" id="2">
+   <Array n="13" type="real">4.63829787234043 2.35106382978723 5.96808510638298 9.93617021276596 0.0106382978723404 0.765957446808511 0.606382978723404 0.148936170212766 0.585106382978723 0.276595744680851 0.627659574468085 0.627659574468085 0.180851063829787</Array>
+  </Cluster>
+  <Cluster name="3" size="99" id="3">
+   <Array n="13" type="real">5.31313131313131 5.88888888888889 5.37373737373737 3.52525252525253 0.212121212121212 0.818181818181818 0.626262626262626 0.363636363636364 0.525252525252525 0.141414141414141 0.535353535353535 0.676767676767677 0.333333333333333</Array>
+  </Cluster>
+ </ClusteringModel>
+</PMML>
